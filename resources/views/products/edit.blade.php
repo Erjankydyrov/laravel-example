@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-@if ($errors->any()) {{ dd($errors->all()) }} @endif
 @section('main')
     <h1>Редактирование продукта: {{ $product->name }}</h1>
     <form method="post" action="{{ route('products.update', $product->id) }}" enctype="multipart/form-data">

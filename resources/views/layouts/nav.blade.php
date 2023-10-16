@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+</head>
+
 <nav class="navbar">
     <div class="container">
         <a href="{{ route('home') }}" class="navbar-brand">Warhammer Store</a>

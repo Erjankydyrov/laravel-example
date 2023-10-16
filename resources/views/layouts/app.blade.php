@@ -8,8 +8,6 @@
     <title>Warhammer Store</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 </head>
 
 <body>

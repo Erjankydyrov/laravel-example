@@ -7,12 +7,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function adminIndex()
-    {
-        $products = Product::all();
-        return view('products.admin.index', compact('products'));
-    }
-
     public function index()
     {
         $products = Product::all(); // Получить список всех продуктов
@@ -29,9 +23,15 @@ class ProductController extends Controller
         return view('products.show', compact('product'));
     }
 
+    public function adminIndex()
+    {
+        $products = Product::all();
+        return view('products.admin.index', compact('products'));
+    }
+
     public function create()
     {
-        return view('products.create');
+        return view('products.admin.create');
     }
 
     public function store(Request $request)
@@ -57,7 +57,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.adminIndex');
     }
 
     public function update(Request $request, $id)
@@ -74,14 +74,14 @@ class ProductController extends Controller
         $product->description = $request->input('description');
         $product->price = $request->input('price');
 
-        if ($request->hasFile('image')) {   
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
             if ($image->isValid()) {
-                
+
                 if (!empty($product->image) && file_exists(public_path('images/products/' . $product->image))) {
                     unlink(public_path('images/products/' . $product->image));
                 }
-    
+
                 $imageName = time() . '.' . $image->extension();
                 $image->move(public_path('images/products'), $imageName);
                 $product->image = $imageName;
@@ -97,13 +97,13 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.adminIndex');
     }
 
     public function edit($id)
     {
         $product = Product::find($id); // Найти продукт по ID
-        return view('products.edit', compact('product'));
+        return view('products.admin.edit', compact('product'));
     }
 
     public function destroy($id)
@@ -118,6 +118,6 @@ class ProductController extends Controller
             $product->delete();
         }
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.adminIndex');
     }
 }

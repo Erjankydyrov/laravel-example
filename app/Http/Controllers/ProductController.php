@@ -10,10 +10,9 @@ class ProductController extends Controller
 {
     public function adminIndex()
     {
-        $products = Product::all(); // Получить список всех продуктов для административной части
+        $products = Product::all();
         return view('products.admin.index', compact('products'));
     }
-
 
     public function index()
     {
@@ -30,7 +29,6 @@ class ProductController extends Controller
 
         return view('products.show', compact('product'));
     }
-
 
     public function create()
     {
@@ -56,7 +54,7 @@ class ProductController extends Controller
             $imageName = time() . '.' . $image->extension();
             $image->move(public_path('images/products'), $imageName);
             $product->image = $imageName;
-        }        
+        }
 
         $product->save();
 
@@ -69,7 +67,7 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Пример валидации изображения
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $product = Product::find($id);
@@ -77,12 +75,26 @@ class ProductController extends Controller
         $product->description = $request->input('description');
         $product->price = $request->input('price');
 
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')) {   
             $image = $request->file('image');
-            $imageName = time() . '.' . $image->extension();
-            $image->move('public', 'products/' . $imageName);
-            $product->image = $imageName;
+            if ($image->isValid()) {
+                
+                if (!empty($product->image) && file_exists(public_path('images/products/' . $product->image))) {
+                    unlink(public_path('images/products/' . $product->image));
+                }
+    
+                $imageName = time() . '.' . $image->extension();
+                $image->move(public_path('images/products'), $imageName);
+                $product->image = $imageName;
+            }
         }
+
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $imageName = time() . '.' . $image->extension();
+        //     $image->move(public_path('images/products'), $imageName);
+        //     $product->image = $imageName;
+        // }
 
         $product->save();
 
@@ -100,12 +112,10 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         if ($product) {
-            // Удаляем изображение, связанное с продуктом (если оно существует)
             if (!empty($product->image)) {
-                Storage::delete('images/products/' . $product->image);
+                unlink(public_path('images/products/' . $product->image));
             }
 
-            // Удаление записи о продукте из базы данных
             $product->delete();
         }
 

@@ -1,0 +1,53 @@
+/* Стили для футера */
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 30px 0;
+  margin-top: 30px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-info li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-info a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.footer-info a:hover {
+  color: #ccc;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Отступ снизу для футера */
+body {
+  margin-bottom: 60px;
+}

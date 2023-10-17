@@ -23,5 +23,5 @@
         </div>
         <button type="submit">Обновить продукт</button>
     </form>
-    <a href="{{ route('products.index') }}">Назад к списку продуктов</a>
+    <a href="{{ route('products.adminIndex') }}">Назад к списку продуктов</a>
 @endsection

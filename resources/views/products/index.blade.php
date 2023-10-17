@@ -9,6 +9,4 @@
             </li>
         @endforeach
     </ul>
-    <a href="{{ route('products.create') }}">Добавить продукт</a>
-    
 @endsection

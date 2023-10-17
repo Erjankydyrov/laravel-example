@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = ['name', 'description', 'price', 'image'];
+    protected $keyType = 'string';
+    public $incrementing = false;
 }

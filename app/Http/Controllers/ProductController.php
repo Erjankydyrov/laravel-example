@@ -44,6 +44,7 @@ class ProductController extends Controller
         ]);
 
         $product = new Product;
+        $product->id = str_replace(' ', '_', strtolower($request->input('name')));
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
@@ -70,6 +71,7 @@ class ProductController extends Controller
         ]);
 
         $product = Product::find($id);
+        $product->id = str_replace(' ', '_', strtolower($request->input('name')));
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');

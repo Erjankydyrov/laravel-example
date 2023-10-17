@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id(); // Автоинкрементируемый идентификатор продукта
+            $table->string('id')->primary(); // Автоинкрементируемый идентификатор продукта
             $table->string('name'); // Название продукта
             $table->text('description'); // Описание продукта
             $table->decimal('price', 10, 2); // Цена продукта (десятичное число)

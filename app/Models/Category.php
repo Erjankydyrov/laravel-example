@@ -9,4 +9,9 @@ class Category extends Model
     protected $fillable = ['id', 'name', 'image', 'description'];
     protected $keyType = 'string';
     public $incrementing = false;
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -68,7 +69,11 @@ class CategoryController extends Controller
         ]);
 
         $category = Category::find($id);
-        $category->id = str_replace(' ', '_', strtolower($request->input('name')));
+
+        if (!$category) {
+            return redirect()->route('categories.adminIndex');
+        }
+
         $category->name = $request->input('name');
         $category->description = $request->input('description');
 
@@ -87,6 +92,27 @@ class CategoryController extends Controller
 
         $category->save();
 
+        // Получить новый ID категории
+        $newCategoryId = $category->id;
+
+        // Получить старый ID категории
+        $oldCategoryId = $id;
+        
+        // Найти все продукты, связанные со старой категорией
+        $products = Product::whereHas('categories', function ($query) use ($oldCategoryId) {
+            $query->where('categories.id', $oldCategoryId);
+        })->get();
+
+        // Перебираем продукты и обновляем связи
+        foreach ($products as $product) {
+            $currentCategories = $product->categories->pluck('id')->toArray();
+            if (!in_array($newCategoryId, $currentCategories)) {
+                $currentCategories[] = $newCategoryId;
+                $product->categories()->sync($currentCategories);
+            }
+        }
+
+
         return redirect()->route('categories.adminIndex');
     }
 
@@ -101,6 +127,13 @@ class CategoryController extends Controller
         $category = Category::find($id);
 
         if ($category) {
+            // Проверяем, есть ли у этой категории связанные продукты
+            if ($category->products->isNotEmpty()) {
+                // Если есть, выводим сообщение пользователю
+                return redirect()->route('categories.adminIndex')->with('error', 'Нельзя удалить категорию, у которой есть продукты.');
+            }
+
+            // Если нет связанных продуктов, удаляем категорию
             if (!empty($category->image)) {
                 unlink(public_path('images/categories/' . $category->image));
             }

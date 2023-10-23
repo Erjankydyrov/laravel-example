@@ -8,7 +8,6 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a href="{{ route('home') }}" class="nav-link">Home</a>
-                <a href="{{ route('products.index') }}" class="nav-link">Products</a>
                 <a href="{{ route('categories.index') }}" class="nav-link">Categories</a>
             </li>
         </ul>

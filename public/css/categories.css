@@ -1,0 +1,92 @@
+/* Стилизация контейнера для карточек категорий */
+.category-cards {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* Стилизация карточки категории */
+.category-card {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 15px;
+  margin-right: 15px;
+  text-align: center;
+  flex-basis: calc(33.33% - 20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.category-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.category-image-container {
+  width: 100%;
+  padding-top: 100%; /* 1:1 аспектное соотношение (высота = ширина) */
+  position: relative;
+}
+
+.category-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Стилизация названия категории */
+.category-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Стилизация описания категории */
+.category-description {
+  margin-top: 10px;
+}
+
+/* Стилизация ссылки "Подробнее" */
+.category-link {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Стилизация ссылки "Подробнее" при наведении */
+.category-link:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .category-card {
+    flex-basis: calc(50% - 20px); /* При ширине экрана до 768px, уменьшим ширину карточек до 50% */
+  }
+  .category-card:nth-child(3n) {
+    margin-right: 15px;
+  }
+  .category-card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .category-card {
+    flex-basis: calc(100% - 20px); /* При очень узком экране, установим ширину 100% */
+    margin-right: 0;
+  }
+  .category-card:nth-child(3n) {
+    margin-right: 0;
+  }
+  .category-card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+

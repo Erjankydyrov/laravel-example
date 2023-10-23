@@ -1,0 +1,92 @@
+.category-cards-admin {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category-card-admin {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 0 15px;
+  margin-top: 20px;
+  max-width: 330px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-image-container-admin {
+  width: 100%;
+  padding-top: 100%; 
+  position: relative;
+}
+
+.category-image-admin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-title-admin {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.category-description-admin {
+  margin-top: 10px;
+}
+
+.edit-link-admin {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.delete-button-admin {
+  background-color: #FF5733;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.delete-button-admin:hover {
+  background-color: #E5512D;
+}
+
+.add-category-link-admin {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.add-category-link-admin:hover {
+  background-color: #0056b3;
+}
+
+.admin-categories-title {
+  text-align: center;
+}
+
+@media (max-width: 699px) {
+  .category-card-admin {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

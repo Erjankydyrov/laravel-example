@@ -1,23 +1,30 @@
+<head>
+    <link rel="stylesheet" href="{{ asset('css/categories_edit.css') }}">
+</head>
+
 @extends('layouts.app')
 
 @section('main')
-    <h1>Редактирование категории: {{ $category->name }}</h1>
-    <form method="post" action="{{ route('categories.update', $category->id) }}" enctype="multipart/form-data">
+    <h1 class="edit-title">Редактирование категории: {{ $category->name }}</h1>
+    <form method="post" action="{{ route('categories.update', $category->id) }}" enctype="multipart/form-data" class="category-edit-form">
         @csrf
         @method('put')
-        <div>
+        <div class="form-group">
             <label for="name">Название категории:</label>
             <input type="text" id="name" name="name" value="{{ $category->name }}" required>
         </div>
-        <div>
+        <div class="form-group">
             <label for="description">Описание категории:</label>
             <textarea id="description" name="description" required>{{ $category->description }}</textarea>
         </div>
-        <div>
+        <div class="form-group">
             <label for="image">Изображение категории:</label>
-            <input type="file" id="image" name="image">
+            <img src="{{ asset('images/categories/' . $category->image) }}" alt="{{ $category->name }}" class="category-image-edit">
+            <input type="file" id="image" name="image" class="image-edit">
         </div>
-        <button type="submit">Обновить категорию</button>
+        <button type="submit" class="update-button">Обновить категорию</button>
     </form>
-    <a href="{{ route('categories.adminIndex') }}">Назад к списку категорий</a>
+    <a href="{{ route('categories.adminIndex') }}" class="back-link">Назад к списку категорий</a>
 @endsection
+
+<script src="{{ asset('js/categories.js') }}"></script>

@@ -18,10 +18,20 @@
             <input type="text" id="price" name="price" value="{{ $product->price }}" required>
         </div>
         <div>
+            <label for="categories">Категории продукта:</label>
+            @foreach ($categories as $category)
+                <div>
+                    <input type="checkbox" id="category_{{ $category->id }}" name="category_ids[]"
+                        value="{{ $category->id }}" {{ in_array($category->id, $selectedCategoryIds) ? 'checked' : '' }}>
+                    <label for="category_{{ $category->id }}">{{ $category->name }}</label>
+                </div>
+            @endforeach
+        </div>
+        <div>
             <label for="image">Изображение продукта:</label>
             <input type="file" id="image" name="image">
         </div>
         <button type="submit">Обновить продукт</button>
     </form>
-    <a href="{{ route('products.adminIndex') }}">Назад к списку продуктов</a>
+    <a href="{{ route('products.index') }}">Назад к списку продуктов</a>
 @endsection

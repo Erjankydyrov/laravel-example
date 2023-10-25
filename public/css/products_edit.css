@@ -1,0 +1,68 @@
+/* styles.css */
+.edit-form-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.edit-product-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-form-group {
+  margin: 10px 0;
+}
+
+.edit-form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-checkbox {
+  margin-right: 10px;
+}
+
+.edit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.edit-btn, .edit-back-link {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-btn:hover, .edit-back-link:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+#product-preview-edit {
+  width: 100%; 
+  display: block;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+

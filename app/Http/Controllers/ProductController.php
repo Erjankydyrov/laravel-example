@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -75,7 +76,17 @@ class ProductController extends Controller
         ]);
 
         $product = Product::find($id);
-        $product->id = str_replace(' ', '_', strtolower($request->input('name')));
+        $oldProductId = $product->id;
+
+        // Обновляем связи продукта с категориями
+        $selectedCategories = $request->input('category_ids', []);
+
+        // Удаляем старые связи продукта с категориями
+        DB::table('category_product')->where('product_id', $oldProductId)->delete();
+
+        // Обновляем продукт
+        $newProductId = str_replace(' ', '_', strtolower($request->input('name')));
+        $product->id = $newProductId;
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
@@ -83,11 +94,7 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             if ($image->isValid()) {
-
-                if (!empty($product->image) && file_exists(public_path('images/products/' . $product->image))) {
-                    unlink(public_path('images/products/' . $product->image));
-                }
-
+                // Обработка изображения
                 $imageName = time() . '.' . $image->extension();
                 $image->move(public_path('images/products'), $imageName);
                 $product->image = $imageName;
@@ -96,14 +103,12 @@ class ProductController extends Controller
 
         $product->save();
 
-        // Получаем выбранные категории из формы
-        $selectedCategories = $request->input('category_ids', []); // предполагая, что поле в форме называется category_ids
-
-        // Обновляем связи продукта с категориями
-        $product->categories()->sync($selectedCategories);
+        // Создаем новые связи продукта с категориями
+        $product->categories()->attach($selectedCategories);
 
         return redirect()->route('products.index');
     }
+
 
     public function edit($id)
     {

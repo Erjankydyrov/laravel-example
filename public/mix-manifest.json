@@ -12,6 +12,7 @@
     "/css/products_edit.css": "/css/products_edit.css",
     "/css/products_create.css": "/css/products_create.css",
     "/css/products_show.css": "/css/products_show.css",
+    "/css/products_admin.css": "/css/products_admin.css",
     "/css/categories_show.css": "/css/categories_show.css",
     "/css/categories_create.css": "/css/categories_create.css",
     "/css/categories_edit.css": "/css/categories_edit.css"

@@ -13,6 +13,7 @@ mix.js("resources/js/app.mjs", "public/js")
     .css("resources/css/categories/categories_edit.css", "public/css")
     .css("resources/css/categories/categories_create.css", "public/css")
     .css("resources/css/categories/categories_show.css", "public/css")
+    .css("resources/css/products/products_admin.css", "public/css")
     .css("resources/css/products/products_show.css", "public/css")
     .css("resources/css/products/products_create.css", "public/css")
     .css("resources/css/products/products_edit.css", "public/css");

@@ -37,7 +37,9 @@
         </div>
         <button type="submit" class="create-btn">Создать продукт</button>
     </form>
-    <a href="{{ route('products.index') }}" class="create-back-link">Назад к списку продуктов</a>
+    <div class="create-back-link-box">
+        <a href="{{ route('products.index') }}" class="create-back-link">Назад к списку продуктов</a>
+    </div>
 @endsection
 
 <script src="{{ asset('js/products_create.js') }}"></script>

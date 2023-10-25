@@ -1,0 +1,100 @@
+.admin-product-title {
+  text-align: center;
+}
+
+.admin-product-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.admin-product-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  max-width: 330px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.admin-product-image-container {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+
+.admin-product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-product-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.admin-product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.admin-product-delete-form {
+  margin: 0;
+}
+
+.admin-product-edit {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-product-delete {
+  background-color: #FF0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-product-edit:hover {
+  background-color: #0056b3;
+}
+.admin-product-delete:hover {
+  background-color: #d10a0a;
+}
+
+.btn-add-box {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.btn-add-product {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn-add-product:hover {
+  background-color: #0056b3;
+}

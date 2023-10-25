@@ -41,12 +41,20 @@
   cursor: pointer;
 }
 
-.edit-back-link {
-  display: block;
+.edit-back-link-box {
+  padding: 20px 0;
   text-align: center;
-  margin-top: 20px;
+}
+
+.edit-back-link {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  cursor: pointer;
   text-decoration: none;
-  color: #007BFF;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .edit-btn, .edit-back-link {

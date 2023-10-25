@@ -2124,6 +2124,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/products/products_create.css":
+/*!****************************************************!*\
+  !*** ./resources/css/products/products_create.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/app.css":
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
@@ -5595,6 +5608,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			"css/footer": 0,
 /******/ 			"css/nav": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/products_create": 0,
 /******/ 			"css/products_show": 0,
 /******/ 			"css/categories_show": 0,
 /******/ 			"css/categories_create": 0,
@@ -5648,16 +5662,17 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/js/app.mjs")))
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/nav.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/footer.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories_admin.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories_edit.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories_create.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories_show.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/products/products_show.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/js/app.mjs")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/nav.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/footer.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories_admin.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories_edit.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories_create.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/categories/categories_show.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/products/products_show.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/categories_admin","css/categories","css/footer","css/nav","css/app","css/products_create","css/products_show","css/categories_show","css/categories_create","css/categories_edit"], () => (__webpack_require__("./resources/css/products/products_create.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

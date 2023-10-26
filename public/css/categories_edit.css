@@ -1,14 +1,20 @@
 .edit-title {
+  font-size: 24px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .category-edit-form {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .category-edit-form .form-group {
-  margin-bottom: 20px;
+  margin: 10px 0;
 }
 
 .category-edit-form label {
@@ -17,11 +23,10 @@
   margin-bottom: 5px;
 }
 
-.category-edit-form input[type="text"],
-.category-edit-form textarea {
+.category-edit-form .edit-form-control {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
+  margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -33,28 +38,38 @@
 }
 
 .category-edit-form .update-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
   background-color: #007BFF;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .category-edit-form .update-button:hover {
   background-color: #0056b3;
 }
 
+.edit-back-link-box {
+  padding: 20px 0;
+  text-align: center;
+}
+
 .back-link {
-  display: inline-block;
-  margin-top: 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  cursor: pointer;
   text-decoration: none;
-  color: #007BFF;
-  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .back-link:hover {
-  text-decoration: underline;
+  background-color: #0056b3;
+  color: #fff;
 }
 

@@ -33,8 +33,15 @@
 }
 
 .category-title-admin {
-  font-size: 24px;
   font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.category-actions-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -43,27 +50,32 @@
 }
 
 .edit-link-admin {
-  display: inline-block;
   background-color: #007BFF;
   color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
+  border: none;
   border-radius: 5px;
-  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-category-delete-form {
+  margin: 0;
 }
 
 .delete-button-admin {
-  background-color: #FF5733;
+  background-color: #FF0000;
   color: #fff;
   border: none;
-  padding: 10px 20px;
   border-radius: 5px;
-  margin-top: 10px;
+  padding: 5px 10px;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .delete-button-admin:hover {
-  background-color: #E5512D;
+  background-color: #d10a0a;
 }
 
 .add-category-link-admin {
@@ -81,6 +93,11 @@
 }
 
 .admin-categories-title {
+  text-align: center;
+}
+
+.category-add-box {
+  padding: 20px 0;
   text-align: center;
 }
 

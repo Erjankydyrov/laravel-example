@@ -15,15 +15,20 @@
                             class="category-image-admin">
                     @endif
                 </div>
-                <h2 class="category-title-admin">{{ $category->name }}</h2>
-                <a href="{{ route('categories.edit', $category->id) }}" class="edit-link-admin">Редактировать</a>
-                <form method="post" action="{{ route('categories.destroy', $category->id) }}">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="delete-button-admin">Удалить</button>
-                </form>
+                <div class="category-title-admin">{{ $category->name }}</div>
+                <div class="category-actions-admin">
+                    <a href="{{ route('categories.edit', $category->id) }}" class="edit-link-admin">Редактировать</a>
+                    <form method="post" action="{{ route('categories.destroy', $category->id) }}"
+                        class="admin-category-delete-form">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="delete-button-admin">Удалить</button>
+                    </form>
+                </div>
             </div>
         @endforeach
     </div>
-    <a href="{{ route('categories.create') }}" class="add-category-link-admin">Добавить категорию</a>
+    <div class="category-add-box">
+        <a href="{{ route('categories.create') }}" class="add-category-link-admin">Добавить категорию</a>
+    </div>
 @endsection

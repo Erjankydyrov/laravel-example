@@ -18,7 +18,8 @@
     @if (count($category->products) > 0)
         <div class="product-list">
             @foreach ($category->products as $product)
-                <a href="{{ route('products.show', $product->id) }}" class="product-item">
+                <a href="{{ route('products.show', ['category' => $category->id, 'id' => $product->id]) }}"
+                    class="product-item">
                     <div class="product-box-image">
                         <img src="{{ asset('images/products/' . $product->image) }}" alt="{{ $product->name }}"
                             class="product-image">

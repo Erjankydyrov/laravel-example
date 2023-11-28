@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/products/{category}/{id}', [ProductController::class, 'show'])->name('products.show');
 
 Route::prefix('admin')->group(function () {
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');

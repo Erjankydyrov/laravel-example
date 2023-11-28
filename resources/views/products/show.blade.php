@@ -13,7 +13,7 @@
             <h1 class="product-title">{{ $product->name }}</h1>
             <p class="product-description">{{ $product->description }}</p>
             <p class="product-price">Цена: ${{ $product->price }}</p>
-            <a href="{{ route('products.index') }}" class="back-link">Назад к списку продуктов</a>
+            <a href="{{ route('categories.show', ['id' => $category]) }}" class="back-link">Назад к списку продуктов</a>
         </div>
     </div>
 @endsection

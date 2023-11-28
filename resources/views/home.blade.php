@@ -10,14 +10,14 @@
         <h2>Featured Products</h2>
         <div class="product-list">
             <div class="product">
-                <img src="https://www.games-workshop.com/resources/catalog/product/600x620/60010199058_ENGWH40kStarterSet2.jpg"
+                <img src="{{ asset("/images/pictures/warhammer.webp") }}"
                     alt="Product 1">
                 <h3>Warhammer 40,000 Starter Set</h3>
                 <p>Get started with the latest edition of Warhammer 40,000. The set includes miniatures, rulebook, and more.
                 </p>
             </div>
             <div class="product">
-                <img src="https://www.games-workshop.com/resources/catalog/product/600x620/60010299027_ExtremisLead.jpg"
+                <img src="{{ asset("/images/pictures/warhammer.webp") }}"
                     alt="Product 2">
                 <h3>Warhammer Age of Sigmar Starter Set</h3>
                 <p>Embark on epic fantasy battles with the Age of Sigmar starter set. It includes miniatures and everything

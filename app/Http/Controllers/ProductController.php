@@ -9,15 +9,17 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function show($id)
+    public function show($category, $id)
     {
         $product = Product::find($id);
+
         if (!$product) {
             abort(404); // Отобразить страницу 404, если продукт не найден
         }
 
-        return view('products.show', compact('product'));
+        return view('products.show', compact('product', 'category'));
     }
+
 
     public function index()
     {
